@@ -263,3 +263,14 @@ func NewUserService(repo UserRepository) *UserService {
 
 // 4. Clean Architecture
 // Business logic separated from storage logic.
+
+
+
+
+
+
+
+//Two Important ttr  
+// small focused interfaces (go philosophy)
+// composed as needed
+// BAD: Fat interface

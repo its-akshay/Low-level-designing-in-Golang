@@ -42,3 +42,26 @@ Writing maintainable backend systems:
 | Interface | `implements IFoo` | Implicit satisfaction |
 | Abstract class | `abstract class` | Interface + base struct |
 | Polymorphism | Method overriding | Interface implementation |
+
+
+## 5. Polymorphism via Interfaces
+### Intuition
+Polymorphism = same interface, different behavior depending on the underlying type.
+
+
+
+seperation of concern architecture:
+┌──────────────────────────────────────────────────────┐
+│ HTTP Handler (Concern: HTTP — parse request, respond)│
+│ → calls Service                                      │
+├──────────────────────────────────────────────────────┤
+│ Service Layer (Concern: Business Logic)              │
+│ → orchestrates repositories, applies rules           │
+├──────────────────────────────────────────────────────┤
+│ Repository Layer (Concern: Data Access)              │
+│ → talks to DB, translates DB model to domain model   │
+├──────────────────────────────────────────────────────┤
+│ Domain Model (Concern: Core Business Entities)       │
+│ → pure structs, no I/O dependencies                  │
+└──────────────────────────────────────────────────────┘
+
